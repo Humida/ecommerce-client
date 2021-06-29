@@ -1,0 +1,364 @@
+/* HEADER CSS */
+#header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#navbar > ul {
+  width: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+nav > ul {
+  list-style: none;
+}
+
+nav > ul > li {
+  font-size: 1.8rem;
+  margin: 0px 10px;
+  padding: 10px 20px;
+  font-weight: 600;
+}
+
+nav > ul > li:hover {
+  color: red;
+}
+
+/* <---> */
+
+.header__left {
+  font-size: 4rem;
+}
+
+.header__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__right-icon {
+  padding: 8px;
+  margin: 0px 2px;
+}
+.header__right-icon:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 100%;
+}
+
+/* END HEADER CSS */
+
+/* START TYPE CSS */
+
+@keyframes Text {
+  from {
+    opacity: 0;
+    bottom: 0;
+  }
+
+  to {
+    opacity: 1;
+    bottom: 30%;
+  }
+}
+
+@keyframes TitleIn {
+  from {
+    top: 70%;
+  }
+  to {
+    top: 50%;
+  }
+}
+
+@keyframes TitleOut {
+  from {
+    top: 50%;
+  }
+  to {
+    top: 70%;
+  }
+}
+
+@keyframes hoverImageIn {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes hoverImageOut {
+  from {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes hoverTypeItem {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 0.3;
+  }
+}
+
+#type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.type__container {
+  display: flex;
+  width: 86vw;
+  height: 100%;
+  margin-left: -20px;
+}
+
+.type__item {
+  border-radius: 8px;
+  position: relative;
+  min-width: 28rem;
+  width: calc(100% / 3);
+  height: 100%;
+  margin-left: 20px;
+  overflow: hidden;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.type__item:hover > .overlay {
+  animation: hoverTypeItem 0.6s ease;
+  cursor: pointer;
+  opacity: 0.3;
+}
+
+.type__item > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: hoverImageOut 0.6s ease;
+}
+.type__item:hover .type__item-image {
+  animation: hoverImageIn 0.6s ease;
+  transform: scale(1.2);
+}
+
+.type__item:hover .type__item-more {
+  animation: Text 0.6s ease;
+  bottom: 30%;
+  color: rgba(0, 0, 0, 0, 8);
+  opacity: 1;
+  z-index: 3;
+}
+
+.type__item > .type__item-title {
+  animation: TitleOut 0.6s ease;
+}
+
+.type__item:hover .type__item-title {
+  animation: TitleIn 0.6s ease;
+  top: 50%;
+}
+
+.type__item > p {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  opacity: 0;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.type__item > h2 {
+  position: absolute;
+  top: 70%;
+  /* right:50%; */
+  left: 50%;
+  z-index: 1000;
+  color: #fff;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  opacity: 1;
+  font-weight: 700;
+}
+
+/* Trainding */
+
+#train {
+  display: flex;
+  justify-content: center;
+}
+
+#train > .products__container {
+  width: 86vw;
+}
+
+.products__header {
+  width: 86vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.products__header-title {
+  font-size: 3.6rem;
+  font-weight: 600;
+}
+
+.products__header-nav {
+  margin-right: 7vw;
+}
+.products__header-nav > ul {
+  display: flex;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.products__header-nav > ul > li {
+  margin: 0px 10px;
+  cursor: pointer;
+}
+
+.products__header-nav > ul > li:hover {
+  color: red;
+}
+
+.products__body {
+  width: 86vw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 20px;
+}
+
+/* Cart */
+@keyframes OptionIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes OptionOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes CartImageIn {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes CartImageOut {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.cart {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.cart > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  animation: CartImageOut 0.6s ease;
+}
+
+.cart:hover .cart__image {
+  animation: CartImageIn 0.6s ease;
+  transform: scale(1.1);
+}
+
+.overlay-cart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: 0;
+}
+
+.cart__option {
+  left: 50%;
+  bottom: 8%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: OptionOut 0.6s ease;
+}
+
+.cart:hover .cart__option {
+  animation: OptionIn 0.6s ease;
+  opacity: 1;
+}
+
+.cart__option > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  padding: 4px 16px;
+}
+
+.cart__option > a:hover {
+  background-color: red;
+}
+/* end Cart */ ;

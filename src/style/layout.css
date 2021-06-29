@@ -1,0 +1,7 @@
+#home {
+  display: grid;
+  grid-template-rows: 50px 360px auto;
+  font-size: 1.6rem;
+  column-gap: var(--space-top);
+  row-gap: var(--space-top);
+}
