@@ -2,7 +2,7 @@ import React from "react";
 import Cart from "../Cart";
 
 function Products(props) {
-  const { title } = props;
+  const { title, tab } = props;
   return (
     <div id="train">
       <div className="products__container">
@@ -10,8 +10,10 @@ function Products(props) {
           <h2 className="products__header-title">{title}</h2>
           <div className="products__header-nav">
             <ul>
-              <li>shirt</li>
-              <li>trousers</li>
+              {tab &&
+                tab.map((tab) => {
+                  return <li>{tab}</li>;
+                })}
               <li>view all</li>
             </ul>
           </div>

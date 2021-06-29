@@ -1,6 +1,6 @@
 #home {
   display: grid;
-  grid-template-rows: 50px 360px auto;
+  grid-template-rows: 50px 360px auto auto auto auto auto 340px;
   font-size: 1.6rem;
   column-gap: var(--space-top);
   row-gap: var(--space-top);

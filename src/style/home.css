@@ -1,4 +1,5 @@
 /* HEADER CSS */
+
 #header {
   display: flex;
   flex-direction: row;
@@ -361,4 +362,138 @@ nav > ul > li:hover {
 .cart__option > a:hover {
   background-color: red;
 }
-/* end Cart */ ;
+/* end Cart */
+
+/* categories */
+
+.catelories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+}
+
+.catelories__container {
+  height: 320px;
+  width: 86vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.catelories__container > li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.catelories__container > li > h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 10px 0px;
+}
+/* end categories */
+
+/* Post */
+
+.post {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post__container {
+  width: 86vw;
+  margin-left: -20px;
+  display: flex;
+}
+
+.post__item {
+  min-width: 24rem;
+  width: calc(100% / 3);
+  margin-left: 20px;
+  /* border-radius: 8px; */
+  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+}
+
+.post__item > img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.post__item-type {
+  display: block;
+  margin: 10px 0px;
+}
+
+.post__item > .post__item-tilte {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 16px 0px;
+  overflow: hidden;
+  max-height: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.post__item-desc {
+  margin: 16px 0px 26px;
+  font-size: 1.4rem;
+  opacity: 0.9;
+  line-height: 2.2rem;
+  max-height: 4.4rem;
+  /* overflow: hidden; */
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.post__item > button {
+  outline: none;
+  font-size: 1.6rem;
+  padding: 10px 20px;
+  border-radius: 4px;
+  color: #fff;
+  border: none;
+  background-color: var(--primary-color);
+}
+
+/* Footer */
+#footer {
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__container {
+  width: 86vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__title {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 2.4rem;
+  text-transform: uppercase;
+}
+
+.footer__title ~ ul {
+  border-left: 1px solid #000;
+}
+
+.footer__title ~ ul > li {
+  padding-left: 1rem;
+  line-height: 2.4rem;
+}
+
+.footer__left-address {
+  margin-top: 3rem;
+}
+.footer__left-address > ul > li {
+  line-height: 2.4rem;
+}
