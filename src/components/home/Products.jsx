@@ -1,8 +1,14 @@
 import React from "react";
-import Cart from "../Cart";
+import Card from "../Card";
+import PropTypes from "prop-types";
 
+Products.propTypes = {
+  products: PropTypes.array,
+  title: PropTypes.string,
+  tab: PropTypes.string,
+};
 function Products(props) {
-  const { title, tab } = props;
+  const { title, tab, products } = props;
   return (
     <div id="train">
       <div className="products__container">
@@ -12,17 +18,17 @@ function Products(props) {
             <ul>
               {tab &&
                 tab.map((tab) => {
-                  return <li>{tab}</li>;
+                  return <li key={tab}>{tab}</li>;
                 })}
               <li>view all</li>
             </ul>
           </div>
         </div>
         <div className="products__body">
-          <Cart></Cart>
-          <Cart></Cart>
-          <Cart></Cart>
-          <Cart></Cart>
+          {products !== undefined &&
+            products.map((product) => {
+              return <Card key={product._id} product={product}></Card>;
+            })}
         </div>
       </div>
     </div>

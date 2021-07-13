@@ -1,7 +1,9 @@
 :root {
-  --primary-color: #0656ce;
-  --secondary-color: rgb(204, 140, 21);
-  --white-color: #fff;
-  --space-top: 4rem;
-  --margin-left-cart: 20px;
+    --primary-color: #0656ce;
+    --secondary-color: rgb(204, 140, 21);
+    --white-color: #fff;
+    --space-top: 4rem;
+    --margin-left-cart: 20px;
+    --space-element: 1.4rem;
+    --font-size-primary: 1.6rem;
 }

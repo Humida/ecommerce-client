@@ -1,0 +1,107 @@
+#detail__product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail__product-container {
+    height: auto;
+    /* width: 86vw; */
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 60rem;
+    column-gap: 2rem;
+}
+
+.detail__product-image {
+    height: auto;
+    /* width: calc(100% / 2); */
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.detail__product-image>img {
+    max-height: 50rem;
+    min-width: 40rem;
+    max-width: 50rem;
+    object-fit: cover;
+}
+
+.detail__product-desc {
+    width: 50rem;
+    display: block;
+    height: auto;
+    padding-left: 4rem;
+    border-left: 1px solid #ccc;
+}
+
+.detail__product-desc-name,
+.detail__product-desc-price {
+    text-transform: uppercase;
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: var(--space-element);
+}
+
+.detail__element {
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: var(--space-element);
+}
+
+.detail__product-desc-color {
+    height: auto;
+    width: 100%;
+    display: flex;
+    margin-bottom: var(--space-element);
+}
+
+.detail__product-desc-color>div>div {
+    width: 4rem;
+    height: 4rem;
+    margin: 1rem 2rem 0rem 0rem;
+}
+
+.detail__product-desc-color>div>span {
+    font-size: 1.4rem;
+}
+
+.detail__product-desc-size {
+    margin-bottom: var(--space-element);
+}
+
+.detail__product-desc-size>span {
+    display: inline-block;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.4rem;
+    margin-right: 1rem;
+}
+
+.detail__product-desc>button {
+    width: 60%;
+    display: block;
+    padding: 1.6rem 2rem;
+    color: #fff;
+    background-color: #000;
+    outline: none;
+    border: none;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-top: var(--space-top);
+}
+
+.image__product {
+    height: 8rem;
+}
+
+.image__product>img {
+    width: 8rem;
+    height: 8rem;
+    object-fit: cover;
+    margin-right: 2rem;
+    border-radius: 0.8rem;
+}
