@@ -167,6 +167,10 @@ nav > ul > li:hover {
   align-items: center;
 }
 
+.product__order > .cart__item > .cart__item-delete {
+  display: none;
+}
+
 /* END HEADER CSS */
 
 /* START TYPE CSS */
@@ -371,11 +375,15 @@ nav > ul > li:hover {
 
 .products__body {
   width: 86vw;
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
-  gap: 20px;
+  gap: 20px; */
 }
+
+/* .products__body::-webkit-scrollbar {
+  display: none;
+} */
 
 /* Card */
 
@@ -421,6 +429,8 @@ nav > ul > li:hover {
   height: auto;
   display: flex;
   flex-direction: column;
+  max-width: 30rem;
+  min-width: 24rem;
   /* margin-bottom: 20px; */
 }
 

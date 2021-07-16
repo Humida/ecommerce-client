@@ -1,6 +1,10 @@
 import React from "react";
 import Card from "../Card";
 import PropTypes from "prop-types";
+import Slider from "react-slick";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 Products.propTypes = {
   products: PropTypes.array,
@@ -9,6 +13,13 @@ Products.propTypes = {
 };
 function Products(props) {
   const { title, tab, products } = props;
+  let settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+  };
   return (
     <div id="train">
       <div className="products__container">
@@ -25,10 +36,12 @@ function Products(props) {
           </div>
         </div>
         <div className="products__body">
-          {products !== undefined &&
-            products.map((product) => {
-              return <Card key={product._id} product={product}></Card>;
-            })}
+          <Slider {...settings}>
+            {products !== undefined &&
+              products.map((product) => {
+                return <Card key={product._id} product={product}></Card>;
+              })}
+          </Slider>
         </div>
       </div>
     </div>

@@ -33,7 +33,7 @@ function Cart(props) {
     const updateOrder = order.map((item) => {
       return item.product._id == id
         ? Object.assign({}, item, {
-            quantity: item.quantity - 1 >= 0 ? item.quantity - 1 : 0,
+            quantity: item.quantity - 1 >= 1 ? item.quantity - 1 : 1,
           })
         : item;
     });
@@ -81,7 +81,10 @@ function Cart(props) {
           })
         )}
       </div>
-      <div className="cart__checkout">
+      <div
+        className="cart__checkout"
+        style={{ display: order.length == 0 ? "none" : "flex" }}
+      >
         <Link to="/checkout">check out</Link>
       </div>
     </div>

@@ -10,6 +10,8 @@ import Post from "../components/home/Post";
 import Footer from "../components/home/Footer";
 import "../style/home.css";
 
+// import react slick
+
 // import api
 import productApi from "../api/product.api";
 function Home(props) {
@@ -28,7 +30,7 @@ function Home(props) {
 
     (async () => {
       try {
-        const products = await getProduct(conditions, 1, 4);
+        const products = await getProduct(conditions, 1, 6);
 
         setTrending(products.data);
       } catch (err) {

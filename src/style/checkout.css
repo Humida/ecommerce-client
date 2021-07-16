@@ -1,175 +1,177 @@
 #checkout {
-    font-size: 1.6rem;
+  font-size: 1.6rem;
+  overflow: hidden;
+  /* width: 100vw; */
 }
 
 .checkout__container {
-    display: flex;
-    justify-content: center;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
 
 .checkout__order {
-    margin-left: 60px;
-    margin-right: 60px;
-    width: 54%;
-    display: flex;
-    /* justify-content: center; */
-    flex-direction: column;
-    /* align-items: center; */
+  margin-left: 60px;
+  margin-right: 60px;
+  width: 54%;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  /* align-items: center; */
 }
 
-.checkout__order>h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    margin-bottom: var(--space-element);
+.checkout__order > h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: var(--space-element);
 }
 
 .checkout__products {
-    width: 46%;
-    display: flex;
-    /* justify-content: center; */
-    /* align-items: center; */
+  width: 46%;
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
 }
 
 .form__order-user {
-    width: 100%;
-    /* margin-left: 20px; */
+  width: 100%;
+  /* margin-left: 20px; */
 }
 
-.form__order-user>input {
-    padding: 12px 16px;
-    border-radius: 6px;
-    border: 1px solid #bbb;
-    width: 100%;
-    /* margin: 8px; */
-    outline: none;
-    margin-top: var(--space-element);
-    box-sizing: border-box;
-    font-size: 1.6rem;
+.form__order-user > input {
+  padding: 12px 16px;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+  width: 100%;
+  /* margin: 8px; */
+  outline: none;
+  margin-top: var(--space-element);
+  box-sizing: border-box;
+  font-size: 1.6rem;
 }
 
 .form__order-select-address {
-    width: 100%;
-    margin-top: var(--space-element);
-    display: flex;
-    justify-content: space-between;
-    /* justify-content: stretch; */
+  width: 100%;
+  margin-top: var(--space-element);
+  display: flex;
+  justify-content: space-between;
+  /* justify-content: stretch; */
 }
 
-.form__order-select-address>input {
-    padding: 12px 16px;
-    border: 1px solid #bbb;
-    border-radius: 6px;
-    outline: none;
-    box-sizing: border-box;
-    font-size: 1.6rem;
-    width: 30%;
+.form__order-select-address > select {
+  padding: 12px 16px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  outline: none;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  width: 30%;
 }
 
 .form_order-address {
-    width: 100%;
-    margin-top: var(--space-element);
+  width: 100%;
+  margin-top: var(--space-element);
 }
 
-.form_order-address>input {
-    outline: none;
-    width: 100%;
-    padding: 12px 16px;
-    box-sizing: border-box;
-    border: 1px solid #bbb;
-    border-radius: 6px;
-    font-size: 1.6rem;
+.form_order-address > input {
+  outline: none;
+  width: 100%;
+  padding: 12px 16px;
+  box-sizing: border-box;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font-size: 1.6rem;
 }
 
-.form-order>h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    margin-top: calc(var(--space-element) * 2);
-    margin-bottom: var(--space-element);
+.form-order > h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: calc(var(--space-element) * 2);
+  margin-bottom: var(--space-element);
 }
 
-.form-pay>form>label {
-    display: inline-block;
-    margin-top: 10px;
+.form-pay > form > label {
+  display: inline-block;
+  margin-top: 10px;
 }
-
 
 /* check out products */
 
 .checkout__products {
-    display: flex;
-    flex-direction: column;
-    margin-right: 6rem;
-    background-color: #f4f6f7;
+  display: flex;
+  flex-direction: column;
+  margin-right: 6rem;
+  background-color: #f4f6f7;
 }
 
 .product__order {
-    /* width: 90%; */
-    max-height: 420px;
-    overflow: scroll;
+  /* width: 90%; */
+  max-height: 420px;
+  overflow: scroll;
 }
 
 .product__order::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .checkout__products-container {
-    width: 100%;
-    height: 100%;
-    padding: 2.4rem;
-    box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 2.4rem;
+  box-sizing: border-box;
 }
 
-.checkout__products-container>div {
-    margin-top: var(--space-element);
+.checkout__products-container > div {
+  margin-top: var(--space-element);
 }
 
 .btn-order {
-    width: 100%;
-    height: 50px;
-    padding: 8px 0px;
-    font-size: var(--font-size-primary);
-    font-weight: 400;
-    text-transform: uppercase;
-    color: #fff;
-    background-color: #000;
-    margin-top: calc(var(--space-element) * 3);
-    outline: none;
-    border: none;
-    border-radius: 0.4rem;
+  width: 100%;
+  height: 50px;
+  padding: 8px 0px;
+  font-size: var(--font-size-primary);
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #000;
+  margin-top: calc(var(--space-element) * 3);
+  outline: none;
+  border: none;
+  border-radius: 0.4rem;
 }
 
 .code__sale {
-    display: flex;
-    margin-top: calc(var(--space-element) * 2) !important;
+  display: flex;
+  margin-top: calc(var(--space-element) * 2) !important;
 }
 
-.code__sale>input {
-    flex-grow: 1;
-    outline: none;
-    border: 1px solid #ccc;
-    padding: 10px 16px;
-    font-size: var(--font-size-primary);
+.code__sale > input {
+  flex-grow: 1;
+  outline: none;
+  border: 1px solid #ccc;
+  padding: 10px 16px;
+  font-size: var(--font-size-primary);
 }
 
 .btn-apply {
-    padding: 8px 24px;
-    outline: none;
-    border: 1px solid #ccc;
+  padding: 8px 24px;
+  outline: none;
+  border: 1px solid #ccc;
 }
 
 .shipping-fee {
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.4rem;
-    margin-top: var(--space-element);
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  margin-top: var(--space-element);
 }
 
 .price-sum {
-    display: flex;
-    justify-content: space-between;
-    font-size: var(--font-size-primary);
-    font-weight: 600;
-    margin-top: var(--space-element);
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-primary);
+  font-weight: 600;
+  margin-top: var(--space-element);
 }
