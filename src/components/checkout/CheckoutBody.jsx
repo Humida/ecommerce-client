@@ -28,14 +28,10 @@ const Notification = styled.div`
   width: 400px;
   height: 60px;
   position: absolute;
-
-  /* opacity: 0; */
   right: 0;
   top: 5rem;
   background-color: red;
   opacity: 0.8;
-
-  /* display: block; */
   color: #fff;
   font-weight: 400;
   border-radius: 0.4rem;
@@ -122,7 +118,6 @@ function CheckoutBody(props) {
       return;
     }
     if (phoneNumber == "") {
-      // setMessage(warningMessage.phoneNumber.blankWarning);
       setMessage({
         messageWaring: warningMessage.phoneNumber.blankWarning,
         isActive: true,
@@ -137,7 +132,6 @@ function CheckoutBody(props) {
       return;
     }
     if (address.province.name == "") {
-      // setMessage(warningMessage.province);
       setMessage({
         messageWaring: warningMessage.province,
         isActive: true,
@@ -152,7 +146,6 @@ function CheckoutBody(props) {
       return;
     }
     if (address.district.name == "") {
-      // setMessage(warningMessage.district);
       setMessage({
         messageWaring: warningMessage.district,
         isActive: true,
@@ -167,7 +160,6 @@ function CheckoutBody(props) {
       return;
     }
     if (address.ward.name == "") {
-      // setMessage(warningMessage.ward);
       setMessage({
         messageWaring: warningMessage.ward,
         isActive: true,
@@ -202,14 +194,14 @@ function CheckoutBody(props) {
         name: name,
         email: email,
         phoneNumber: phoneNumber,
-        localAddress: {
+        address: {
           province: address.province.name,
           district: address.district.name,
           ward: address.ward.name,
+          detailAddress: detailAddress,
         },
-        detailAddress: detailAddress,
-        order: order,
       },
+      products: order,
     };
 
     const completeOrder = (async () => {
@@ -427,3 +419,11 @@ function CheckoutBody(props) {
 }
 
 export default CheckoutBody;
+
+
+function completionData(){
+
+  setTimeout(()=>{
+    console.log(namespace);
+  })
+}

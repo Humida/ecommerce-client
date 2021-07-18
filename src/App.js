@@ -1,31 +1,35 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { RecoilRoot } from "recoil";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
+import { useRecoilValue } from "recoil";
 import Home from "./pages/Home";
 import Detail from "./pages/Detail";
 import Checkout from "./pages/Checkout";
-// import styled from "styled-components";
+import orderState from "./state/order.state";
 
 import "./App.css";
 
 function App() {
+  const order = useRecoilValue(orderState);
   return (
-    <RecoilRoot>
-      <Router>
-        <div className="app">
-          <Route exact path="/">
-            <Home />
+    <Router>
+      <div className="app">
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Switch>
+          <Route exact path="/detail">
+            <Detail />
           </Route>
-          <Switch>
-            <Route exact path="/detail">
-              <Detail />
-            </Route>
-            <Route exact path="/checkout">
-              <Checkout />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
-    </RecoilRoot>
+          <Route exact path="/checkout">
+            {order.length > 0 ? <Checkout /> : <Redirect to="/" />}
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
