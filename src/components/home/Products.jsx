@@ -27,21 +27,20 @@ function Products(props) {
           <h2 className="products__header-title">{title}</h2>
           <div className="products__header-nav">
             <ul>
-              {tab &&
+              {/* {tab &&
                 tab.map((tab) => {
                   return <li key={tab}>{tab}</li>;
-                })}
+                })} */}
               <li>view all</li>
             </ul>
           </div>
         </div>
         <div className="products__body">
-          <Slider {...settings}>
+        
             {products !== undefined &&
               products.map((product) => {
                 return <Card key={product._id} product={product}></Card>;
               })}
-          </Slider>
         </div>
       </div>
     </div>

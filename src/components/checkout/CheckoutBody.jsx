@@ -419,11 +419,3 @@ function CheckoutBody(props) {
 }
 
 export default CheckoutBody;
-
-
-function completionData(){
-
-  setTimeout(()=>{
-    console.log(namespace);
-  })
-}

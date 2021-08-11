@@ -21,17 +21,11 @@ function Home(props) {
   const [trousers, setTrousers] = useState([]);
 
   useEffect(() => {
-    const conditions = {
-      type: {},
-      sort: {
-        quantitySold: -1,
-      },
-    };
+    let query = "sort=-price";
 
     (async () => {
       try {
-        const products = await getProduct(conditions, 1, 6);
-
+        const products = await getProduct(query, 1, 4);
         setTrending(products.data);
       } catch (err) {
         throw err;
@@ -40,17 +34,12 @@ function Home(props) {
   }, []);
 
   useEffect(() => {
-    const conditions = {
-      type: {
-        classify: "shirt",
-      },
-      sort: {},
-    };
+    let query = "classify=shirt&sort=-quantitySold";
 
     (async () => {
       try {
-        const products = await getProduct(conditions, 1, 4);
-
+        const products = await getProduct(query, 1, 4);
+        console.log(products);
         setShirt(products.data);
       } catch (err) {
         throw err;
@@ -58,15 +47,11 @@ function Home(props) {
     })();
   }, []);
   useEffect(() => {
-    const conditions = {
-      type: {
-        classify: "trousers",
-      },
-      sort: {},
-    };
+    let query = "classify=trouser&sort=-quantitySold";
+
     (async () => {
       try {
-        const products = await getProduct(conditions, 1, 4);
+        const products = await getProduct(query, 1, 4);
         setTrousers(products.data);
       } catch (err) {
         throw err;
@@ -91,7 +76,7 @@ function Home(props) {
       />
       <Products
         products={trousers.products}
-        title="trousers products"
+        title="Trousers products"
         tab={["shirt", "trousers"]}
       />
       <Categories />

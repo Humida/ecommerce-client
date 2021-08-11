@@ -1,0 +1,117 @@
+#filter {
+    box-sizing: border-box;
+    font-size: var(--font-size-primary);
+}
+
+.filter__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter__container-body {
+    width: 88%;
+    display: flex;
+    flex-direction: row;
+}
+
+
+/* Filter bar */
+
+.filter-bar {
+    margin: 1.6rem 0rem;
+    min-width: 200px;
+    background-color: #fff;
+    padding: 4rem 1rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.filter-bar>.filter-bar__title {
+    width: 100%;
+    font-size: var(--fontsize__big-pc);
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 0;
+}
+
+.filter-bar>div {
+    margin: 3rem 0rem 0rem 1rem;
+}
+
+.filter-bar>div>h3 {
+    font-size: var(--fontsize__normal-pc);
+    margin-bottom: 1rem;
+}
+
+.filter-bar>div>ul>li {
+    padding: 0.5rem 1rem;
+}
+
+
+/* filter display */
+
+.filter-display {
+    width: 100%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin: 1.6rem 0rem 2rem 2rem;
+}
+
+.filter__products {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 4rem;
+    column-gap: 2rem;
+    /* margin-left: 4rem; */
+    padding: 2rem 0rem 2rem 0rem;
+    margin-left: 4rem;
+    justify-content: center;
+}
+
+.filter__sort {
+    margin-top: 3rem;
+    margin-left: 2rem;
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.filter__sort>select {
+    padding: 1rem;
+    border-radius: 0.4rem;
+    outline: none;
+    border: 1px solid #ccc;
+    font-size: 1.6rem;
+}
+
+.filter__sort>select>option {
+    padding: 0.2rem;
+}
+
+.pagation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--fontsize__normal-pc);
+    height: 5rem;
+    margin: 3rem;
+}
+
+.pagation>ul {
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagation>ul>li {
+    padding: 0rem 0.6rem;
+}

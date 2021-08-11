@@ -8,6 +8,8 @@ import { useRecoilValue } from "recoil";
 import Home from "./pages/Home";
 import Detail from "./pages/Detail";
 import Checkout from "./pages/Checkout";
+import Filter from './pages/Filter'
+
 import orderState from "./state/order.state";
 
 import "./App.css";
@@ -26,6 +28,9 @@ function App() {
           </Route>
           <Route exact path="/checkout">
             {order.length > 0 ? <Checkout /> : <Redirect to="/" />}
+          </Route>
+          <Route exact path="/filter">
+            <Filter />
           </Route>
         </Switch>
       </div>

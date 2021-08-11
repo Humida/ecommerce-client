@@ -46,7 +46,7 @@ function Card(props) {
       <div className="card__image-container">
         <img
           className="card__image"
-          src="https://images.unsplash.com/photo-1624588483556-851e7726b9fd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80"
+          src={product.images[0]}
           alt=""
         />
       </div>

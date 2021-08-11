@@ -6,4 +6,12 @@
     --margin-left-cart: 20px;
     --space-element: 1.4rem;
     --font-size-primary: 1.6rem;
+    /* PC */
+    --fontsize__big-pc: 2.8rem;
+    --fontsize__normal-pc: 2rem;
+    --fontsize__small-pc: 1.8rem;
+    /* tablet */
+    --fontsize__big-tab: 2.4rem;
+    --fontsize__normal-tab: 1.8rem;
+    --fontsize__small-tab: 1.6rem;
 }
