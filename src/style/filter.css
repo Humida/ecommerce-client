@@ -57,6 +57,7 @@
     width: 100%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     margin: 1.6rem 0rem 2rem 2rem;
+    position: relative;
 }
 
 .filter__products {
@@ -66,7 +67,7 @@
     row-gap: 4rem;
     column-gap: 2rem;
     /* margin-left: 4rem; */
-    padding: 2rem 0rem 2rem 0rem;
+    padding: 2rem 0rem 10rem 0rem;
     margin-left: 4rem;
     justify-content: center;
 }
@@ -95,6 +96,10 @@
 }
 
 .pagation {
+    position: absolute;
+    left: 48%;
+    bottom: -2rem;
+    transform: translateX(-50%);
     display: flex;
     flex-direction: row;
     justify-content: center;

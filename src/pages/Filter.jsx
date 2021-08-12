@@ -9,14 +9,14 @@ import "../style/filter.css";
 import productApi from "../api/product.api";
 
 function Filter(props) {
-  console.log(window.location.origin);
+  let defaultQuery = props.query;
+  console.log(typeof defaultQuery);
   const getProduct = productApi.getProduct;
   const [products, setProducts] = useState({});
   const [page, setPage] = useState(1);
-  const [query, setQuery] = useState("");
-
+  const [query, setQuery] = useState(defaultQuery);
   const [sort, setSort] = useState("");
-  console.log(page);
+  console.log(query);
   useEffect(() => {
     (async () => {
       try {
@@ -29,31 +29,31 @@ function Filter(props) {
     })();
   }, [query, page]);
 
-  const [checkedClassify, setCheckedClassify] = useState([
-    {
-      classify: "trouser",
-      query: "classify=trouser",
-      checked: false,
-    },
-    {
-      classify: "shirt",
-      query: "classify=shirt",
-      checked: false,
-    },
-  ]);
+  // const [checkedClassify, setCheckedClassify] = useState([
+  //   {
+  //     classify: "trouser",
+  //     query: "classify=trouser",
+  //     checked: false,
+  //   },
+  //   {
+  //     classify: "shirt",
+  //     query: "classify=shirt",
+  //     checked: false,
+  //   },
+  // ]);
 
-  const [checkedType, setCheckedType] = useState([
-    {
-      type: "ao dai",
-      query: "type=ao-dai",
-      checked: false,
-    },
-    {
-      type: "ao ngan",
-      query: "type=ao-ngan",
-      checked: false,
-    },
-  ]);
+  // const [checkedType, setCheckedType] = useState([
+  //   {
+  //     type: "ao dai",
+  //     query: "type=ao-dai",
+  //     checked: false,
+  //   },
+  //   {
+  //     type: "ao ngan",
+  //     query: "type=ao-ngan",
+  //     checked: false,
+  //   },
+  // ]);
 
   const [checkedSize, setCheckedSize] = useState([
     {
@@ -118,36 +118,36 @@ function Filter(props) {
 
   const [checkedPriceRange, setCheckedPriceRange] = useState([
     {
-      priceRange: "500-800",
-      query: "price[gt]=500&price[lt]=800",
+      priceRange: "500000-800000",
+      query: "price[gt]=500000&price[lt]=800000",
       checked: false,
     },
     {
-      priceRange: "800-1000",
-      query: "price[gt]=800&price[lt]=1000",
+      priceRange: "800000-1000000",
+      query: "price[gt]=800000&price[lt]=1000000",
       checked: false,
     },
     {
-      priceRange: "1000-1500",
-      query: "price[gt]=1000&price[lt]=1500",
+      priceRange: "1000000-1500000",
+      query: "price[gt]=1000000&price[lt]=1500000",
       checked: false,
     },
     {
-      priceRange: "1500-2000",
-      query: "price[gt]=1500&price[lt]=2000",
+      priceRange: "1500000-2000000",
+      query: "price[gt]=1500000&price[lt]=2000000",
       checked: false,
     },
   ]);
 
   useEffect(() => {
-    let queryClassify = checkedClassify.reduce((query, current) => {
-      if (current.checked === true) return current.query + " " + query;
-      return "" + query;
-    }, "");
-    let queryType = checkedType.reduce((query, current) => {
-      if (current.checked === true) return current.query + " " + query;
-      return "" + query;
-    }, "");
+    // let queryClassify = checkedClassify.reduce((query, current) => {
+    //   if (current.checked === true) return current.query + " " + query;
+    //   return "" + query;
+    // }, "");
+    // let queryType = checkedType.reduce((query, current) => {
+    //   if (current.checked === true) return current.query + " " + query;
+    //   return "" + query;
+    // }, "");
 
     let querySize = checkedSize.reduce((query, current) => {
       if (current.checked === true) return current.query + " " + query;
@@ -165,52 +165,47 @@ function Filter(props) {
     }, "");
 
     let query =
-      queryType +
-      queryClassify +
-      querySize +
-      queryColor +
-      queryPriceRange +
-      sort;
+      defaultQuery + " " + querySize + queryColor + queryPriceRange + sort;
     query = query.split(" ");
     if (!sort) query.length = query.length - 1;
     query = query.join("&");
     setQuery(query);
   }, [
-    checkedType,
-    checkedClassify,
+    // checkedType,
+    // checkedClassify,
     checkedSize,
     checkedColor,
     checkedPriceRange,
     sort,
   ]);
 
-  function handleClassify(index) {
-    let indexUpdate = index;
+  // function handleClassify(index) {
+  //   let indexUpdate = index;
 
-    let updateChecked = checkedClassify.map((item, index) => {
-      if (index === indexUpdate) {
-        item.checked = !item.checked;
-      }
-      return item;
-    });
+  //   let updateChecked = checkedClassify.map((item, index) => {
+  //     if (index === indexUpdate) {
+  //       item.checked = !item.checked;
+  //     }
+  //     return item;
+  //   });
 
-    console.log(updateChecked);
-    setCheckedClassify(updateChecked);
-  }
+  //   console.log(updateChecked);
+  //   setCheckedClassify(updateChecked);
+  // }
 
-  function handleType(index) {
-    let indexUpdate = index;
+  // function handleType(index) {
+  //   let indexUpdate = index;
 
-    let updateChecked = checkedType.map((item, index) => {
-      if (index === indexUpdate) {
-        item.checked = !item.checked;
-      }
-      return item;
-    });
+  //   let updateChecked = checkedType.map((item, index) => {
+  //     if (index === indexUpdate) {
+  //       item.checked = !item.checked;
+  //     }
+  //     return item;
+  //   });
 
-    console.log(updateChecked);
-    setCheckedType(updateChecked);
-  }
+  //   console.log(updateChecked);
+  //   setCheckedType(updateChecked);
+  // }
 
   function handleCheckedSize(index) {
     let indexUpdate = index;
@@ -266,7 +261,7 @@ function Filter(props) {
   }
 
   function handlePrePage() {
-    let updatePage = page - 1 >= 0 ? page - 1 : 0;
+    let updatePage = page - 1 >= 1 ? page - 1 : 1;
 
     setPage(updatePage);
   }
@@ -282,12 +277,12 @@ function Filter(props) {
             setQuery={setQuery}
             checkedColor={checkedColor}
             handleCheckedColor={handleCheckedColor}
-            checkedClassify={checkedClassify}
-            handleClassify={handleClassify}
+            // checkedClassify={checkedClassify}
+            // handleClassify={handleClassify}
             checkedSize={checkedSize}
             handleCheckedSize={handleCheckedSize}
-            checkedType={checkedType}
-            handleType={handleType}
+            // checkedType={checkedType}
+            // handleType={handleType}
             checkedPriceRange={checkedPriceRange}
             handleCheckedPriceRange={handleCheckedPriceRange}
           />

@@ -4,16 +4,16 @@ import { useState, useEffect } from "react";
 function FilterBar(props) {
   const {
     checkedColor,
-    checkedType,
-    checkedClassify,
+    // checkedType,
+    // checkedClassify,
     checkedSize,
     checkedPriceRange,
   } = props;
   const {
     handleCheckedColor,
     handleCheckedSize,
-    handleClassify,
-    handleType,
+    // handleClassify,
+    // handleType,
     handleCheckedPriceRange,
   } = props;
   return (
@@ -38,7 +38,7 @@ function FilterBar(props) {
           </svg>
         </i>
       </div>
-      <div className="filter__classify">
+      {/* <div className="filter__classify">
         <h3>Classify</h3>
         <ul>
           {checkedClassify.map((item, index) => {
@@ -56,8 +56,8 @@ function FilterBar(props) {
             );
           })}
         </ul>
-      </div>
-      <div className="filter__type">
+      </div> */}
+      {/* <div className="filter__type">
         <h3>Type</h3>
         <ul>
           {checkedType.map((item, index) => {
@@ -77,7 +77,7 @@ function FilterBar(props) {
             );
           })}
         </ul>
-      </div>
+      </div> */}
       <div className="filter__color">
         <h3>Color</h3>
         <ul>

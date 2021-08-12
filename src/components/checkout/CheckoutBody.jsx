@@ -21,7 +21,6 @@ const ForNotification = keyframes`
   100%{
     opacity:0;
   }
-
 `;
 
 const Notification = styled.div`

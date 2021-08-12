@@ -24,10 +24,10 @@ function Header(props) {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link>Shirt</Link>
+            <Link to="/shirt">Shirt</Link>
           </li>
           <li>
-            <Link>Trousers</Link>
+            <Link to="/trouser">Trousers</Link>
           </li>
         </ul>
       </nav>
@@ -89,6 +89,49 @@ function Header(props) {
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
             <circle cx="10" cy="10" r="7" />
             <line x1="21" y1="21" x2="15" y2="15" />
+          </svg>
+        </i>
+      </div>
+
+      <div className="header__mobie">
+        <i className="header__mobie-menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-menu-2"
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#000000"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <line x1="4" y1="6" x2="20" y2="6" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="18" x2="20" y2="18" />
+          </svg>
+        </i>
+        <h2>DOO</h2>
+        <i className="header__mobie-cart">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-shopping-cart"
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#000000"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <circle cx="6" cy="19" r="2" />
+            <circle cx="17" cy="19" r="2" />
+            <path d="M17 17h-11v-14h-2" />
+            <path d="M6 5l14 1l-1 7h-13" />
           </svg>
         </i>
       </div>

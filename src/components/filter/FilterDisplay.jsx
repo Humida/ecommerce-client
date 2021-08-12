@@ -4,6 +4,7 @@ import Card from "../Card";
 
 function FilterDisplay(props) {
   const { products, currentPage, pages } = props.products;
+  console.log(pages);
   const { handleSort } = props;
   const { page, handleNextPage, handlePrePage } = props;
   console.log(props.products);
