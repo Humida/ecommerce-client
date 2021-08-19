@@ -6,17 +6,20 @@ import FilterBar from "../components/filter/FilterBar";
 import FilterDisplay from "../components/filter/FilterDisplay";
 import "../style/filter.css";
 
+// icons
+import { AiOutlineFilter } from "react-icons/ai";
+import { AiOutlineClose } from "react-icons/ai";
+
 import productApi from "../api/product.api";
 
 function Filter(props) {
   let defaultQuery = props.query;
-  console.log(typeof defaultQuery);
   const getProduct = productApi.getProduct;
   const [products, setProducts] = useState({});
   const [page, setPage] = useState(1);
   const [query, setQuery] = useState(defaultQuery);
   const [sort, setSort] = useState("");
-  console.log(query);
+  const [isActiveBar, setIsActiveBar] = useState(false);
   useEffect(() => {
     (async () => {
       try {
@@ -28,32 +31,6 @@ function Filter(props) {
       }
     })();
   }, [query, page]);
-
-  // const [checkedClassify, setCheckedClassify] = useState([
-  //   {
-  //     classify: "trouser",
-  //     query: "classify=trouser",
-  //     checked: false,
-  //   },
-  //   {
-  //     classify: "shirt",
-  //     query: "classify=shirt",
-  //     checked: false,
-  //   },
-  // ]);
-
-  // const [checkedType, setCheckedType] = useState([
-  //   {
-  //     type: "ao dai",
-  //     query: "type=ao-dai",
-  //     checked: false,
-  //   },
-  //   {
-  //     type: "ao ngan",
-  //     query: "type=ao-ngan",
-  //     checked: false,
-  //   },
-  // ]);
 
   const [checkedSize, setCheckedSize] = useState([
     {
@@ -140,15 +117,6 @@ function Filter(props) {
   ]);
 
   useEffect(() => {
-    // let queryClassify = checkedClassify.reduce((query, current) => {
-    //   if (current.checked === true) return current.query + " " + query;
-    //   return "" + query;
-    // }, "");
-    // let queryType = checkedType.reduce((query, current) => {
-    //   if (current.checked === true) return current.query + " " + query;
-    //   return "" + query;
-    // }, "");
-
     let querySize = checkedSize.reduce((query, current) => {
       if (current.checked === true) return current.query + " " + query;
       return "" + query;
@@ -170,43 +138,7 @@ function Filter(props) {
     if (!sort) query.length = query.length - 1;
     query = query.join("&");
     setQuery(query);
-  }, [
-    // checkedType,
-    // checkedClassify,
-    checkedSize,
-    checkedColor,
-    checkedPriceRange,
-    sort,
-  ]);
-
-  // function handleClassify(index) {
-  //   let indexUpdate = index;
-
-  //   let updateChecked = checkedClassify.map((item, index) => {
-  //     if (index === indexUpdate) {
-  //       item.checked = !item.checked;
-  //     }
-  //     return item;
-  //   });
-
-  //   console.log(updateChecked);
-  //   setCheckedClassify(updateChecked);
-  // }
-
-  // function handleType(index) {
-  //   let indexUpdate = index;
-
-  //   let updateChecked = checkedType.map((item, index) => {
-  //     if (index === indexUpdate) {
-  //       item.checked = !item.checked;
-  //     }
-  //     return item;
-  //   });
-
-  //   console.log(updateChecked);
-  //   setCheckedType(updateChecked);
-  // }
-
+  }, [checkedSize, checkedColor, checkedPriceRange, sort]);
   function handleCheckedSize(index) {
     let indexUpdate = index;
 
@@ -266,25 +198,36 @@ function Filter(props) {
     setPage(updatePage);
   }
 
+  function handleActiveBar() {
+    setIsActiveBar(!isActiveBar);
+  }
+
   return (
     <div id="filter">
       <Header />
 
       <div className="filter__container">
         <div className="filter__container-body">
+          {!isActiveBar && (
+            <div className="filter__icon-open" onClick={handleActiveBar}>
+              <AiOutlineFilter style={{ "font-size": "2.8rem" }} />
+            </div>
+          )}
+          {isActiveBar && (
+            <div className="filter__icon-close" onClick={handleActiveBar}>
+              <AiOutlineClose />
+            </div>
+          )}
           <FilterBar
             query={query}
             setQuery={setQuery}
             checkedColor={checkedColor}
             handleCheckedColor={handleCheckedColor}
-            // checkedClassify={checkedClassify}
-            // handleClassify={handleClassify}
             checkedSize={checkedSize}
             handleCheckedSize={handleCheckedSize}
-            // checkedType={checkedType}
-            // handleType={handleType}
             checkedPriceRange={checkedPriceRange}
             handleCheckedPriceRange={handleCheckedPriceRange}
+            isActiveBar={isActiveBar}
           />
           <FilterDisplay
             products={products}

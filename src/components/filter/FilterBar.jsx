@@ -1,23 +1,19 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import classNames from "classnames";
 
 function FilterBar(props) {
-  const {
-    checkedColor,
-    // checkedType,
-    // checkedClassify,
-    checkedSize,
-    checkedPriceRange,
-  } = props;
-  const {
-    handleCheckedColor,
-    handleCheckedSize,
-    // handleClassify,
-    // handleType,
-    handleCheckedPriceRange,
-  } = props;
+  const { checkedColor, checkedSize, checkedPriceRange, isActiveBar } = props;
+  const { handleCheckedColor, handleCheckedSize, handleCheckedPriceRange } =
+    props;
   return (
-    <div className="filter-bar">
+    <div
+      className={classNames(
+        "filter-bar",
+        { none: isActiveBar },
+        { block: isActiveBar }
+      )}
+    >
       <div className="filter-bar__title">
         <h2>Filter</h2>
         <i>
@@ -38,46 +34,6 @@ function FilterBar(props) {
           </svg>
         </i>
       </div>
-      {/* <div className="filter__classify">
-        <h3>Classify</h3>
-        <ul>
-          {checkedClassify.map((item, index) => {
-            return (
-              <li key={index}>
-                <input
-                  type="checkbox"
-                  name={item.classify}
-                  value={item.classify}
-                  onChange={() => handleClassify(index)}
-                  checked={item.checked}
-                />
-                <label htmlFor={item.classify}>{item.classify}</label>
-              </li>
-            );
-          })}
-        </ul>
-      </div> */}
-      {/* <div className="filter__type">
-        <h3>Type</h3>
-        <ul>
-          {checkedType.map((item, index) => {
-            return (
-              <li key={index}>
-                <input
-                  type="checkbox"
-                  name={item.type}
-                  value={item.type}
-                  onChange={() => {
-                    handleType(index);
-                  }}
-                  checked={item.checked}
-                />
-                <label htmlFor={item.type}>{item.type}</label>
-              </li>
-            );
-          })}
-        </ul>
-      </div> */}
       <div className="filter__color">
         <h3>Color</h3>
         <ul>

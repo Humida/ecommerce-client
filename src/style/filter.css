@@ -25,6 +25,16 @@
     background-color: #fff;
     padding: 4rem 1rem;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    animation: FilterBar 0.4s ease;
+}
+
+@keyframes FilterBar {
+    from {
+        left: -22rem;
+    }
+    to {
+        left: 0;
+    }
 }
 
 .filter-bar>.filter-bar__title {
@@ -119,4 +129,109 @@
 
 .pagation>ul>li {
     padding: 0rem 0.6rem;
+}
+
+
+/* filter icon */
+
+.filter__icon-open {
+    position: absolute;
+    left: 0;
+    top: 20rem;
+    width: 3.6rem;
+    height: 8rem;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* filter icon close */
+
+.filter__icon-close {
+    position: absolute;
+    top: 6.7rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    border: 1px solid #ccc;
+    left: 22rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    z-index: 10000;
+    animation: IconClose 0.4s ease;
+    display: none;
+}
+
+@keyframes IconClose {
+    from {
+        left: 0;
+    }
+    to {
+        left: 22rem;
+    }
+}
+
+.filter__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    opacity: 0.2;
+    z-index: 100;
+}
+
+.filter__icon-open {
+    display: none;
+}
+
+.none {
+    display: none !important;
+}
+
+.block {
+    display: block !important;
+}
+
+
+/* responsive */
+
+@media only screen and (max-width: 1023px) {
+    .filter__products {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .card {
+        min-width: 16rem;
+    }
+    .filter-bar {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 5rem;
+        z-index: 1000;
+    }
+    .filter__icon-open {
+        display: flex;
+    }
+    .filter__icon-close {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .filter__products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .filter__products {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

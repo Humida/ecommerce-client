@@ -1,6 +1,12 @@
 import React from "react";
 import { useState } from "react";
 
+import { FaAccessibleIcon } from "react-icons/fa";
+import { HiOutlineShoppingCart } from "react-icons/hi";
+import { BiUser, BiSearchAlt2 } from "react-icons/bi";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { IoCloseOutline } from "react-icons/all";
+
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -13,6 +19,13 @@ function Header(props) {
   const [hideCart, setHideCart] = useState(true);
   function handleHideCart() {
     setHideCart(!hideCart);
+  }
+
+  // mobie
+  const [isActiveMenu, setIsActiveMenu] = useState(false);
+
+  function handleMenu() {
+    setIsActiveMenu(!isActiveMenu);
   }
 
   return (
@@ -33,107 +46,75 @@ function Header(props) {
       </nav>
       <div className="header__right">
         <i className="header__right-cart header__right-icon">
-          <svg
-            onClick={handleHideCart}
-            xmlns="http://www.w3.org/2000/svg"
-            className="icon icon-tabler icon-tabler-shopping-cart"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="#000000"
-            fill="none"
-            strokeLineCap="round"
-            strokeLineJoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <circle cx="6" cy="19" r="2" />
-            <circle cx="17" cy="19" r="2" />
-            <path d="M17 17h-11v-14h-2" />
-            <path d="M6 5l14 1l-1 7h-13" />
-          </svg>
+          <HiOutlineShoppingCart onClick={handleHideCart} />
           <Cart display={hideCart} handleHideCart={handleHideCart}></Cart>
         </i>
         <i className="header__right-user header__right-icon">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="icon icon-tabler icon-tabler-user"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="#000000"
-            fill="none"
-            strokeLineCap="round"
-            strokeLineJoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <circle cx="12" cy="7" r="4" />
-            <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-          </svg>
+          <BiUser />
         </i>
 
         <i className="header__right-search header__right-icon">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="icon icon-tabler icon-tabler-search"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="#000000"
-            fill="none"
-            strokeLineCap="round"
-            strokeLineJoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <circle cx="10" cy="10" r="7" />
-            <line x1="21" y1="21" x2="15" y2="15" />
-          </svg>
+          <BiSearchAlt2 />
         </i>
       </div>
 
       <div className="header__mobie">
         <i className="header__mobie-menu">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-menu-2"
-            width="28"
-            height="28"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="#000000"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <line x1="4" y1="6" x2="20" y2="6" />
-            <line x1="4" y1="12" x2="20" y2="12" />
-            <line x1="4" y1="18" x2="20" y2="18" />
-          </svg>
+          {!isActiveMenu ? (
+            <AiOutlineMenu onClick={handleMenu} />
+          ) : (
+            <AiOutlineClose onClick={handleMenu} />
+          )}
         </i>
         <h2>DOO</h2>
         <i className="header__mobie-cart">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-shopping-cart"
-            width="28"
-            height="28"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="#000000"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <circle cx="6" cy="19" r="2" />
-            <circle cx="17" cy="19" r="2" />
-            <path d="M17 17h-11v-14h-2" />
-            <path d="M6 5l14 1l-1 7h-13" />
-          </svg>
+          <HiOutlineShoppingCart />
         </i>
+        {isActiveMenu && (
+          <div className="header__mobie-sub">
+            <div className="header__mobie-sub-nav">
+              <i>
+                <BiUser />
+              </i>
+              <i>
+                <BiSearchAlt2 />
+              </i>
+              <i>
+                <HiOutlineShoppingCart />
+              </i>
+            </div>
+            <ul className="header__mobie-sub-menu">
+              <li>
+                <a href="">shirt</a>
+                <ul>
+                  <li>
+                    <a href="">Ao dai</a>
+                  </li>
+                  <li>
+                    <a href="">Ao ngan</a>
+                  </li>
+                  <li>
+                    <a href="">Ao thun</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="">trouser</a>
+                <ul>
+                  <li>
+                    <a href="">Quan dai</a>
+                  </li>
+                  <li>
+                    <a href="">Quan ngan</a>
+                  </li>
+                  <li>
+                    <a href="">Quan thun</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        )}
       </div>
     </header>
   );
