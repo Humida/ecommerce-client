@@ -21,7 +21,7 @@
 }
 
 .checkout__order>h2 {
-    font-size: 2rem;
+    font-size: var(--fontsize__normal);
     font-weight: 600;
     text-transform: uppercase;
     margin-bottom: var(--space-element);
@@ -48,7 +48,7 @@
     outline: none;
     margin-top: var(--space-element);
     box-sizing: border-box;
-    font-size: 1.6rem;
+    font-size: var(--fontsize__small);
 }
 
 .form__order-select-address {
@@ -65,7 +65,7 @@
     border-radius: 6px;
     outline: none;
     box-sizing: border-box;
-    font-size: 1.6rem;
+    font-size: var(--fontsize__small);
     width: 30%;
 }
 
@@ -81,7 +81,7 @@
     box-sizing: border-box;
     border: 1px solid #bbb;
     border-radius: 6px;
-    font-size: 1.6rem;
+    font-size: var(--fontsize__small);
 }
 
 .form-order>h2 {

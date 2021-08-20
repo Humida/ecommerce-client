@@ -11,9 +11,11 @@
 }
 
 .filter__container-body {
-    width: 88%;
+    width: 96%;
     display: flex;
     flex-direction: row;
+    /* margin-left:; */
+    box-sizing: border-box;
 }
 
 
@@ -68,6 +70,7 @@
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     margin: 1.6rem 0rem 2rem 2rem;
     position: relative;
+    box-sizing: border-box;
 }
 
 .filter__products {
